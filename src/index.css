@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Lato', sans-serif;
+	background-color: rgb(251, 248, 248);
+}
+
+body {
+	margin: 0;
+}
+main {
+	margin-top: 60px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+	display: none !important;
+	position: relative;
+	background-color: white;
+	width: 2rem !important;
+	height: 2rem !important;
+	border-radius: 100px;
+	box-shadow: 1px 1px 5px rgb(0 0 0 / 0.5);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+	font-weight: 900;
+	font-size: 0.75rem !important;
+	color: red !important;
+}
+
+.swiper-pagination-bullet {
+	background-color: rgb(0 0 0 / 0.25) !important;
+	width: 8px !important;
+	height: 8px !important;
+	border-radius: 5px !important;
+	box-shadow: 0px 0px 5px -1px black;
+	opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+	background-color: red !important;
+	box-shadow: 0px 0px 5px -1px white;
+}
+
+.line-clamp-1 {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.line-clamp-2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+::-moz-selection {
+	/* Code for Firefox */
+	color: white;
+	background: red;
+}
+
+::selection {
+	color: white;
+	background: red;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+	color: rgba(0, 0, 0, 0);
+	opacity: 1;
+	display: block;
+	background: url('https://e7.pngegg.com/pngimages/216/665/png-clipart-calendar-date-google-calendar-eban-part-time-text-calendar-thumbnail.png')
+		no-repeat;
+	background-size: contain;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+/* input:-webkit-autofill {
+	-webkit-text-fill-color: rgb(185 28 28);
+	letter-spacing: 0.05em;
+} */
+input:focus {
+	outline-width: 2px;
+	outline-color: rgb(185 28 28);
+}
+
+a,
+button {
+	-webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 640px) {
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: flex !important;
+		position: relative;
+		background-color: white;
+		width: 2rem !important;
+		height: 2rem !important;
+		border-radius: 100px;
+		box-shadow: 1px 1px 5px rgb(0 0 0 / 0.5);
+		/* padding: 1rem !important; */
+		box-sizing: border-box !important;
+	}
+	.swiper-button-prev {
+		left: 5px !important;
+	}
+	.swiper-button-next {
+		right: 5px !important;
+	}
+	.swiper-button-prev::after,
+	.swiper-button-next::after {
+		font-weight: 900;
+		font-size: 1rem !important;
+		color: red !important;
+	}
+}
+
+.t-shadow {
+	text-shadow: 1px 1px 5px rgb(0 0 0/0.75);
+}

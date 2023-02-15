@@ -32,7 +32,7 @@
    };
 </pre>
 
-<h3>Start Development Server</h3>
+<h3>3. Start Development Server</h3>
 <p> Once all the dependencies are installed and Firebase config file is updated, you can start development server. To start a development server on http://localhost:3000 run:</p>
 <pre>npm start</pre>
 <hr/>

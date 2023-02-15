@@ -43,7 +43,7 @@ const AllPackages = () => {
 	return (
       <>
       {isLoading && <Spinner/>}
-		<section className='max-w-[1280px] p-[1rem] md:px-[3rem] md:mx-auto md:py-[2rem] overflow-hidden mt-[70px] min-h-[80vh]'>
+		<section className='max-w-[1280px] p-[1rem] md:px-[3rem] md:mx-auto md:py-[2rem] overflow-hidden mt-[70px]'>
          <h1 className='text-2xl font-bold pt-2 pb-6 text-center'>All Packages</h1>
 			<InfiniteScrollList initList={list} loadMore={loadMore} setList={setList}>
             <ul className={`grid grid-cols-autoFit gap-2 sm:gap-8 mx-auto ${list && list.length < 3 ? 'sm:grid-cols-minMax' : 'sm:grid-cols-mobileFit'}`}>

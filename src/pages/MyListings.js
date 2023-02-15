@@ -44,7 +44,7 @@ export default function MyListings() {
 
 	//prettier-ignore
 	return (
-		<div className='max-w-[1280px] w-[90%] mx-auto sm:px-3 lg:pt-10 sm:pt-6 mt-4 min-h-[90vh] min-h-[80vh]'>
+		<div className='max-w-[1280px] w-[90%] mx-auto sm:px-3 lg:pt-10 sm:pt-6 mt-4'>
 			<div className='flex justify-between items-center mb-8 gap-4'>
 				<h1 className='text-2xl font-bold pt-2 pb-6'>My Listings</h1>
 				<Link to='/listings/create' className='flex justify-center items-center gap-2'> 

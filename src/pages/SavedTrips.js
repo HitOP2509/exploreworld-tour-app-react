@@ -25,7 +25,7 @@ const SavedTrips = () => {
 	// if (!isLoading && isLoggedIn && (!likedTrips || likedTrips.length <= 0)) return <h1>No saved trips.</h1>;
 	//prettier-ignore
 	return (
-		<div className='max-w-[1280px] w-[90%] mx-auto sm:px-3 pt-3 lg:pt-10 sm:pt-6 min-h-[80vh]'>
+		<div className='max-w-[1280px] w-[90%] mx-auto sm:px-3 pt-3 lg:pt-10 sm:pt-6'>
          <h1 className='text-2xl font-bold pt-2 pb-6'>Saved Trips</h1>
             {(!isLoading && isLoggedIn && (!likedTrips || likedTrips.length <= 0)) && <h2 className='text-xl'>No saved trips.</h2>}
       		<ul className={`grid grid-cols-autoFit gap-2 sm:gap-8 mx-auto ${fitGrid}`}>

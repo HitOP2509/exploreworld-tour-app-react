@@ -40,7 +40,7 @@ const DestinationDetails = () => {
 
 	//prettier-ignore
 	return (
-		<div className='max-w-[1280px] p-[1rem] md:mx-auto md:px-[3rem] min-h-[80vh]'>
+		<div className='max-w-[1280px] p-[1rem] md:mx-auto md:px-[3rem]'>
 			<h1 className='text-2xl pt-3 pb-6 font-medium'> {destinationName} Holiday Packages</h1>
          {isLoading && <Spinner/>}
          {list.length<1 && <h3> No trips found for {destinationName}</h3>}

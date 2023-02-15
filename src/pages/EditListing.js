@@ -112,7 +112,7 @@ const EditListing = function () {
 
 	//prettier-ignore
 	return (
-				<section className="max-w-[1280px] p-[1rem] md:mx-auto md:py-[3rem] min-h-[80vh]">
+				<section className="max-w-[1280px] p-[1rem] md:mx-auto md:py-[3rem]">
 					<h1 className='text-2xl font-bold pt-2 pb-6'>Edit your listed trip</h1>
 					<div className='max-w-[750px] mx-auto my-10'>
 						<div className='w-full px-6 py-3 mt-5 mb-10 shadow-inner'>

@@ -66,7 +66,7 @@ const ListingDetails = (props) => {
 		<>
 			{modalOpen && <ModalBookingForm openModal={openModal} closeModal={closeModal} show={modalOpen}/>}
 			<SwiperSlider imagesArray={listingData.imagesUrl}/>
-			<div className='relative max-w-[1280px] mx-auto pt-4 md:pt-8 md:grid md:grid-cols-colOneFourth md:px-[3rem] px-[1rem] gap-4 min-h-[80vh]'>
+			<div className='relative max-w-[1280px] mx-auto pt-4 md:pt-8 md:grid md:grid-cols-colOneFourth md:px-[3rem] px-[1rem] gap-4'>
 				<div className=''>
 					<div className='xsm:block flex justify-between items-center'>
 						<h1 className='text-2xl font-bold pt-2 pb-6'>{listingData.name}</h1>

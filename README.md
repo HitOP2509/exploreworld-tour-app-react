@@ -12,7 +12,7 @@
 </ul>
 <hr/>
 <br/>
-<hr/>
+
 <h2>Features:</h2>
 <ul>
   <li>Login/Sign up using Firebase Auth</li>
@@ -27,7 +27,7 @@
 </ul>
 <hr/>
 <br/>
-<hr/>
+
 <h2>Run this project on your machine:</h2>
 <p>Before you can start running this project locally, Make sure you have Node installed.</p>
 
@@ -53,7 +53,7 @@
 <pre>npm start</pre>
 <hr/>
 <br/>
-<hr/>
+
 <h2>Screenshots (as a visitor):</h2>
 
 <h3>Homepage</h3>
@@ -83,8 +83,8 @@
 <h3>Saved trips page</h3>
 <img src='https://firebasestorage.googleapis.com/v0/b/personal-84946.appspot.com/o/saved%20trips%20page.png?alt=media&token=7bca018c-4b7e-46ec-9f49-9ba24943097b'>
 
-<br/>
 <hr/>
+<br/>
 <h2>Screenshots (as an admin):</h2>
 
 <h3>Admin dashboard</h3>

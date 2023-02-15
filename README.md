@@ -11,7 +11,8 @@
    <li>Firestore DB - To store data</li>
 </ul>
 <hr/>
-
+<br/>
+<hr/>
 <h2>Features:</h2>
 <ul>
   <li>Login/Sign up using Firebase Auth</li>
@@ -19,14 +20,14 @@
   <li>Create & Update user accounts</li>
   <li>Create, Update, & Delete Tour listings (Admin only)</li>
   <li>Send enquiry as a visitor</li>
-  <li>Get Enquiries under Admins profile and functionality to delete the enquiry</li>
+  <li>Get and Delete Enquiries as an Admin.</li>
   <li>Save tour listings</li>
-  <li>Infinite scrolling</li>
-  <li>Swiper Slider</li>
+  <li>Infinite scrolling to load more tours</li>
+  <li>Swiper Slider for Hero slider and Card Slider</li>
 </ul>
-
 <hr/>
-
+<br/>
+<hr/>
 <h2>Run this project on your machine:</h2>
 <p>Before you can start running this project locally, Make sure you have Node installed.</p>
 
@@ -52,7 +53,6 @@
 <pre>npm start</pre>
 <hr/>
 <br/>
-
 <hr/>
 <h2>Screenshots (as a visitor):</h2>
 

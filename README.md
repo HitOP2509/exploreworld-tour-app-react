@@ -10,7 +10,6 @@
    <li>Firebase auth - For authentication</li>
    <li>Firestore DB - To store data</li>
 </ul>
-<hr/>
 <br/>
 
 <h2>Features:</h2>
@@ -25,7 +24,6 @@
   <li>Infinite scrolling to load more tours</li>
   <li>Swiper Slider for Hero slider and Card Slider</li>
 </ul>
-<hr/>
 <br/>
 
 <h2>Run this project on your machine:</h2>
@@ -51,7 +49,6 @@
 <h3>3. Start Development Server</h3>
 <p> Once all the dependencies are installed and Firebase config file is updated, you can start development server. To start a development server on http://localhost:3000 run:</p>
 <pre>npm start</pre>
-<hr/>
 <br/>
 
 <h2>Screenshots (as a visitor):</h2>
@@ -83,7 +80,6 @@
 <h3>Saved trips page</h3>
 <img src='https://firebasestorage.googleapis.com/v0/b/personal-84946.appspot.com/o/saved%20trips%20page.png?alt=media&token=7bca018c-4b7e-46ec-9f49-9ba24943097b'>
 
-<hr/>
 <br/>
 <h2>Screenshots (as an admin):</h2>
 

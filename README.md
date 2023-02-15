@@ -15,14 +15,29 @@
 <h2>Run this project on your machine:</h2>
 <p>Before you can start running this project locally, Make sure you have Node installed.</p>
 
-<h3>Install Requirred Packages:</h3>
+<h3>1. Install Requirred Packages:</h3>
 <pre>npm i</pre>
 
-<h3>Start Development Server</h3>
-<p> Once all dependencies are installed, you can start development server. To start a development server on http://localhost:3000 run:</p>
-<pre>npm start</pre>
+<h3>2. Create firebase project and replace firebase config details inside src > auth > firebase-config.js</h3>
+<p>Replace this code with your Firebase config code:</p>
+<pre>
+   // Your web app's Firebase configuration
+   const firebaseConfig = {
+   	apiKey: process.env.REACT_APP_FIREBASE_API,
+   	authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+   	projectId: process.env.REACT_APP_PROJECT_ID,
+   	storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+   	messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+   	appId: process.env.REACT_APP_APP_ID,
+   };
+</pre>
 
+<h3>Start Development Server</h3>
+<p> Once all the dependencies are installed and Firebase config file is updated, you can start development server. To start a development server on http://localhost:3000 run:</p>
+<pre>npm start</pre>
 <hr/>
+<br/>
+
 <h2>Features:</h2>
 <ul>
   <li>Login/Sign up using Firebase Auth</li>

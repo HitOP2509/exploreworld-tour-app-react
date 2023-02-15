@@ -2,10 +2,27 @@
 <p>I have creafted this app from scratch. And This project is the first major project that I have developed after learning react.</p>
 
 <h3 align="left">Tech used:</h3>
-<p>React, Firebase, Redux, Tailwind CSS<p>
+<ul>
+   <li>React 18</li>
+   <li>Tailwind CSS</li>
+   <li>Redux Toolkit - For state management</li>
+   <li>React router DOM - For routing</li>
+   <li>Firebase auth - For authentication</li>
+   <li>Firestore DB - To store data</li>
+</ul>
+<hr/>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=hitop2509&label=Profile%20views&color=0e75b6&style=flat" alt="hitop2509" /> </p>
+<h2>Run this project on your machine:</h2>
+<p>Before you can start running this project locally, Make sure you have Node installed.</p>
 
+<h3>Install Requirred Packages:</h3>
+<pre>npm i</pre>
+
+<h3>Start Development Server</h3>
+<p> Once all dependencies are installed, you can start development server. To start a development server on http://localhost:3000 run:</p>
+<pre>npm start</pre>
+
+<hr/>
 <h2>Features:</h2>
 <ul>
   <li>Login/Sign up using Firebase Auth</li>

@@ -12,6 +12,21 @@
 </ul>
 <hr/>
 
+<h2>Features:</h2>
+<ul>
+  <li>Login/Sign up using Firebase Auth</li>
+  <li>Storing tour listings, user data on Firebase Firestore DB</li>
+  <li>Create & Update user accounts</li>
+  <li>Create, Update, & Delete Tour listings (Admin only)</li>
+  <li>Send enquiry as a visitor</li>
+  <li>Get Enquiries under Admins profile and functionality to delete the enquiry</li>
+  <li>Save tour listings</li>
+  <li>Infinite scrolling</li>
+  <li>Swiper Slider</li>
+</ul>
+
+<hr/>
+
 <h2>Run this project on your machine:</h2>
 <p>Before you can start running this project locally, Make sure you have Node installed.</p>
 
@@ -37,19 +52,6 @@
 <pre>npm start</pre>
 <hr/>
 <br/>
-
-<h2>Features:</h2>
-<ul>
-  <li>Login/Sign up using Firebase Auth</li>
-  <li>Storing tour listings, user data on Firebase Firestore DB</li>
-  <li>Create & Update user accounts</li>
-  <li>Create, Update, & Delete Tour listings (Admin only)</li>
-  <li>Send enquiry as a visitor</li>
-  <li>Get Enquiries under Admins profile and functionality to delete the enquiry</li>
-  <li>Save tour listings</li>
-  <li>Infinite scrolling</li>
-  <li>Swiper Slider</li>
-</ul>
 
 <hr/>
 <h2>Screenshots (as a visitor):</h2>

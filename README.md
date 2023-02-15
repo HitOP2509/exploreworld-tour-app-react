@@ -83,9 +83,6 @@
 <br/>
 <h2>Screenshots (as an admin):</h2>
 
-<h3>Admin dashboard</h3>
-<img src='https://firebasestorage.googleapis.com/v0/b/personal-84946.appspot.com/o/admin%20profile%20dashboard.png?alt=media&token=1ddb7dfd-5d19-4839-9cee-e5ce526db8f0'>
-
 <h3>Listed tours page (Admin Dashboard)</h3>
 <img src='https://firebasestorage.googleapis.com/v0/b/personal-84946.appspot.com/o/my%20listings%20page.png?alt=media&token=5f65314b-afce-4d41-9225-ee2e331e4a42'>
 

@@ -13,24 +13,25 @@ const TourType = () => {
 	const params = useParams();
 
 	useEffect(() => {
-		(async function () {
-			setIsLoading(true);
-			const listingsRef = collection(db, 'listings');
-			const q = query(
-				listingsRef,
-				orderBy('createdAt', 'desc'),
-				where('type', 'array-contains-any', [params.type]),
-				limit(20)
-			);
-			const packagesSnap = await getDocs(q);
-			const tours = [];
-			packagesSnap.forEach((doc, index) => {
-				const docData = { ...doc.data(), id: doc.id };
-				tours.push(docData);
-			});
-			setList(tours);
-			setIsLoading(false);
-		})();
+		if (list.length < 1)
+			(async function () {
+				setIsLoading(true);
+				const listingsRef = collection(db, 'listings');
+				const q = query(
+					listingsRef,
+					orderBy('createdAt', 'desc'),
+					where('type', 'array-contains-any', [params.type]),
+					limit(20)
+				);
+				const packagesSnap = await getDocs(q);
+				const tours = [];
+				packagesSnap.forEach((doc, index) => {
+					const docData = { ...doc.data(), id: doc.id };
+					tours.push(docData);
+				});
+				setList(tours);
+				setIsLoading(false);
+			})();
 	}, [params.type]);
 
 	const loadMore = async () => {

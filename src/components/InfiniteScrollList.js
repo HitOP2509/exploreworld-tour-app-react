@@ -20,10 +20,6 @@ const InfiniteScrollList = ({ children, initList = [], loadMore, setList }) => {
 		})();
 	}, [isLastChildIntersecting, loadMore]);
 
-	useEffect(() => {
-		setList((prev) => [...prev, ...arr]);
-	}, [arr, setList]);
-
 	//prettier-ignore
 	return (
 		<div ref={ref} className={``}>

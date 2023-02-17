@@ -29,6 +29,7 @@ export async function googleAuth() {
 
 		return docSnap;
 	} catch (error) {
+		console.log(error.message);
 		toast.error('Authentication failed...');
 	}
 }

@@ -1,7 +1,7 @@
 <h1 align="left">ExploreWorld Tour App </h1>
 <p>I have creafted this app from scratch. And This project is the first major project that I have developed after learning react.</p>
 
-<p>Live link: <a href='https://exploreworldreact.web.app/' target="_blank">https://exploreworldreact.web.app/</a></p>
+<p>Live link: <a href='https://exploreworldreact.web.app/' target='_blank'>https://exploreworldreact.web.app/</a></p>
 
 <h3 align="left">Tech used:</h3>
 <ul>

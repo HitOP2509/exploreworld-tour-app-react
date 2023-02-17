@@ -21,7 +21,7 @@
   <li>Send enquiry as a visitor</li>
   <li>Get and Delete Enquiries as an Admin.</li>
   <li>Save tour listings</li>
-  <li>Infinite scrolling to load more tours</li>
+  <li>Infinite scrolling using custom hooks and intersection observer to load tours</li>
   <li>Swiper Slider for Hero slider and Card Slider</li>
 </ul>
 <br/>

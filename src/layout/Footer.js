@@ -27,8 +27,6 @@ const Footer = () => {
 		{ name: 'Terms & conditions', link: '/terms' },
 		{ name: 'Privacy policy', link: '/privacy-policy' },
 		{ name: 'Disclaimer', link: '/disclaimer' },
-		{ name: 'Notice', link: '/notices' },
-		{ name: 'Partner with us', link: '/partner-programme' },
 	];
 	const linksArr4 = [
 		{ name: 'Sikkim tour packages', link: '/packages/domestic/sikkim' },

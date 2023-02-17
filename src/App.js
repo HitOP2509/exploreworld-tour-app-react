@@ -21,6 +21,10 @@ import ContactUs from './pages/ContactUs';
 import AllPackages from './pages/AllPackages';
 import PackagesLayout from './layout/PackagesLayout';
 import TourType from './pages/TourType';
+import Disclaimer from './pages/Disclaimer';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
+import AboutUs from './pages/AboutUs';
 
 function App() {
 	//prettier-ignore
@@ -29,6 +33,10 @@ function App() {
 			children: [
 				{ index: true, element: <Home />},
 				{path:'contact-us', element:<ContactUs/>},
+				{path:'disclaimer', element:<Disclaimer/>},
+				{path:'privacy-policy', element:<PrivacyPolicy/>},
+				{path:'terms', element:<Terms/>},
+				{path:'about-us', element:<AboutUs/>},
 				{path:'sign-in', element:<SignIn/>, action:signInAction},
 				{path:'sign-up', element: <SignUp/>, action:signUpAction},
 				{path:'forgot-password', element: <ForgotPassword/>, action:forgotPasswordAction},

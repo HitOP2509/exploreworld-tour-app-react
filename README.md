@@ -31,7 +31,7 @@
 <br/>
 
 <h2>Note:</h2>
-<p>I've used different concepts to achieve the same thing in different components. Because I have developed this project to learn React. Somewhere I have used React router DOM Form and somewhere norm html form. Sometimes I have used useEffect to fetch some data and sometime I have used React router DOM Loader function.</p>
+<p>I've used different concepts to achieve the same thing in different components. Because I have developed this project to learn React. Somewhere I've used React router DOM Form and somewhere I've used normal html form. Sometimes I've used useEffect to fetch some data and sometime I've used React router DOM Loader function.</p>
 <br/>
 
 <h2>Run this project on your machine:</h2>
@@ -40,8 +40,8 @@
 <h3>1. Install Requirred Packages:</h3>
 <pre>npm i</pre>
 
-<h3>2. Create firebase project and replace firebase config details inside src > auth > firebase-config.js</h3>
-<p>Replace this code with your Firebase config code:</p>
+<h3>2. Create firebase project and replace the following codes:</h3>
+<p>Go to src > auth > firebase-config.js and replace this code with your own firebase config code:</p>
 <pre>
    // Your web app's Firebase configuration
    const firebaseConfig = {

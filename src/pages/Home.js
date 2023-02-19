@@ -26,10 +26,9 @@ const Home = () => {
 				const domesticTours = [];
 				const internationalTours = [];
 				const trendingTours = [];
+
 				//Fetching header images from realtime database
-				const res = await fetch(
-					'https://exploreworldreact-default-rtdb.asia-southeast1.firebasedatabase.app/header-images.json'
-				);
+				const res = await fetch(process.env.REACT_APP_HEADER_IMAGES_API);
 				const data = await res.json();
 				headerImages.push(...Object.values(data));
 

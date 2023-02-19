@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import SignIn, { action as signInAction } from './pages/SignIn';
 import SignUp, { action as signUpAction } from './pages/SignUp';
 import ForgotPassword, { action as forgotPasswordAction } from './pages/ForgotPassword';
-import ResetPasswordPage, { action as resetPasswordAction } from './pages/ResetPasswordPage';
 import Error from './pages/Error';
 import Profile, { action as profileAction } from './pages/Profile';
 import CreateListing, { action as createListingAction } from './pages/CreateListing';
@@ -40,7 +39,6 @@ function App() {
 				{path:'sign-in', element:<SignIn/>, action:signInAction},
 				{path:'sign-up', element: <SignUp/>, action:signUpAction},
 				{path:'forgot-password', element: <ForgotPassword/>, action:forgotPasswordAction},
-				{path:'reset-password', element: <ResetPasswordPage/>, action: resetPasswordAction},
 				{path:'profile', element: <Profile/>, action: profileAction},
 				{path:'my-bookings', element:<Bookings/>, loader: bookingsLoader},
 				{path:'saved-trips', element:<SavedTrips/>},

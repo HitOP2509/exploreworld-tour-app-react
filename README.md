@@ -10,7 +10,9 @@
    <li>Redux Toolkit - For state management</li>
    <li>React router DOM - For routing</li>
    <li>Firebase auth - For authentication</li>
-   <li>Firestore DB - To store data</li>
+   <li>Firebase Firestore DB - To store users and tour data</li>
+   <li>Firebase Realtime DB - To store Header slider images for Home section</li>
+   <li>Firebase Storage - To store images</li>
 </ul>
 <br/>
 
@@ -46,6 +48,15 @@
    	messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
    	appId: process.env.REACT_APP_APP_ID,
    };
+</pre>
+<p>And to change Homescreen hero slider images, store the images in Firebase Realtime DB and Replace the API endpoint from "process.env.REACT_APP_HEADER_IMAGES_API" to your own Realtime DB endpoint:</p>
+<p> Go to src > pages > Home.js > Then replace this line:</p>
+<pre>
+   const res = await fetch(process.env.REACT_APP_HEADER_IMAGES_API);
+</pre> 
+to
+<pre>
+   const res = await fetch(Your_Realtime_DB_Endpoint);
 </pre>
 
 <h3>3. Start Development Server</h3>

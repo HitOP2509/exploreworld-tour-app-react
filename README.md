@@ -1,5 +1,5 @@
 <h1 align="left">ExploreWorld Tour App </h1>
-<p>I have creafted this app from scratch. And This project is the first major project that I have developed after learning react.</p>
+<p>I have creafted this app from scratch. And This project is the first major project.</p>
 
 <p>Live link: <a href='https://exploreworldreact.web.app/' target='_blank'>https://exploreworldreact.web.app/</a></p>
 
@@ -7,9 +7,9 @@
 <ul>
    <li>React 18</li>
    <li>Tailwind CSS</li>
-   <li>Redux Toolkit - For state management</li>
-   <li>React router DOM - For routing</li>
-   <li>Firebase auth - For authentication</li>
+   <li>Redux Toolkit</li>
+   <li>React router DOM</li>
+   <li>Firebase auth</li>
    <li>Firebase Firestore DB - To store users and tour data</li>
    <li>Firebase Realtime DB - To store Header slider images for Home section</li>
    <li>Firebase Storage - To store images</li>
@@ -28,6 +28,10 @@
   <li>Infinite scrolling using custom hooks and intersection observer to load tours</li>
   <li>Swiper Slider for Hero slider and Card Slider</li>
 </ul>
+<br/>
+
+<h2>Note:</h2>
+<p>I've used different concepts to achieve the same thing in different components. Because I have developed this project to learn React. Somewhere I have used React router DOM Form and somewhere norm html form. Sometimes I have used useEffect to fetch some data and sometime I have used React router DOM Loader function.</p>
 <br/>
 
 <h2>Run this project on your machine:</h2>

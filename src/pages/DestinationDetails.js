@@ -30,7 +30,6 @@ const DestinationDetails = () => {
 			setList(tours);
 			setIsLoading(false);
 		})();
-		console.log('chaNGged');
 	}, [params.place]);
 
 	const loadMore = async () => {

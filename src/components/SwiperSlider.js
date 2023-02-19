@@ -3,7 +3,6 @@ import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import 'swiper/css/bundle';
 
 const SwiperSlider = ({ imagesArray, title, slides = 1, className }) => {
-	//
 	//prettier-ignore
 	return (
 		<Swiper className={`h-[250px] md:h-[550px] select-none ${className}`}

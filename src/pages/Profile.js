@@ -52,7 +52,6 @@ const Profile = () => {
         if (actionData === "success") {
             setInputDisabled(true);
             toast.success("Profile updated successfully");
-            navigate("/");
         }
         if (actionData?.type === "password-error") {
             setShowError(true);
@@ -82,8 +81,8 @@ const Profile = () => {
 				{showError && actionData==='name' && <p>Name can't be empty</p>}
 				<input name='name' value={name} onChange={inputChangeHandler} id='name' type='text' className='w-full h-10 pl-2 rounded-md mb-5 text-gray-700 text-l font-[500] border-slate-400 border  focus:outline-0 focus:border-2 placeholder:text-xl' disabled={inputDisabled}/>
 				{actionData==='email' && <p>Email can't be empty</p>}
-				{showError && actionData?.type==='password-error' &&
-					<p>Can't update the email as you're signed in using {actionData.provider}</p>}
+				{/* {showError && actionData?.type==='password-error' &&
+					<p>Can't update the email as you're signed in using {actionData.provider}</p>} */}
 				<div className='relative h-10 mb-4'>
 					<input name='email' value={email} onChange={inputChangeHandler} id='email' type='email' disabled={inputDisabled || emailDisabled}
 					className={`${emailDisabled?'opacity-70 cursor-not-allowed':'opacity-100'} w-full h-full pl-2 rounded-md mb-5 text-gray-700 text-l font-[500] border-slate-400 border  focus:outline-0 focus:border-2 placeholder:text-xl`}/>
@@ -111,13 +110,15 @@ export async function action({ request }) {
 
         if (
             auth.currentUser.providerData[0].providerId !== "password" &&
-            email !== auth.currentUser.email
-        )
+            email !== auth.currentUser.email &&
+            email
+        ) {
+            console.log(email);
             return {
                 type: "password-error",
                 provider: auth.currentUser.providerData[0].providerId,
             };
-
+        }
         if (!name) return "name";
         const newDetails = {
             displayName: name,
@@ -129,7 +130,7 @@ export async function action({ request }) {
             auth.currentUser.providerData[0].providerId === "password" &&
             auth.currentUser.email.trim() !== email.trim()
         )
-            await updateEmail(auth.currentUser, email);
+            await updateEmail(auth.currentUser.email);
 
         const updatedData = {
             name: auth.currentUser.displayName,

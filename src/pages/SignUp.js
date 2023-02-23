@@ -1,29 +1,44 @@
-import 'react-toastify/dist/ReactToastify.css';
-import React, { useRef, useState } from 'react';
-import { Form, Link, redirect, useActionData, useNavigation } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import "react-toastify/dist/ReactToastify.css";
+import React, { useEffect, useRef, useState } from "react";
+import {
+    Form,
+    Link,
+    redirect,
+    useActionData,
+    useNavigate,
+    useNavigation,
+} from "react-router-dom";
+import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import createUser from '../auth/sign-up';
-import GoogleSignInButton from '../components/GoogleSignInButton';
+import createUser from "../auth/sign-up";
+import GoogleSignInButton from "../components/GoogleSignInButton";
 
 const SignUp = () => {
-	const [showPassword, setShowPassword] = useState('password');
-	const nameRef = useRef('');
-	const emailRef = useRef('');
-	const passwordRef = useRef('');
+    const [showPassword, setShowPassword] = useState("password");
+    const nameRef = useRef("");
+    const emailRef = useRef("");
+    const passwordRef = useRef("");
 
-	const navigation = useNavigation();
-	const isSubmitting = navigation.state === 'submitting';
-	const submitMessage = useActionData();
+    const navigation = useNavigation();
+    const navigate = useNavigate();
+    const isSubmitting = navigation.state === "submitting";
+    const submitMessage = useActionData();
 
-	function eyeClick(e) {
-		e.preventDefault();
-		setShowPassword((prev) => (prev === 'password' ? 'text' : 'password'));
-	}
+    function eyeClick(e) {
+        e.preventDefault();
+        setShowPassword((prev) => (prev === "password" ? "text" : "password"));
+    }
 
-	//prettier-ignore
-	return (
+    useEffect(() => {
+        if (submitMessage === "success") {
+            toast.success("Signed up successfully");
+            navigate(-2);
+        }
+    }, [submitMessage]);
+
+    //prettier-ignore
+    return (
 		<section className='container lg:px-3 md:py-12 h-full max-w-7xl mx-auto'>
 			<h1 className='text-2xl font-bold pt-2 pb-6 text-center'>Sign up as a new user</h1>
 
@@ -63,21 +78,31 @@ const SignUp = () => {
 export default SignUp;
 
 export async function action({ request, params }) {
-	const data = await request.formData();
-	const email = data.get('email');
-	const password = data.get('password');
-	const name = data.get('name');
+    const data = await request.formData();
+    const email = data.get("email");
+    const password = data.get("password");
+    const name = data.get("name");
 
-	//Invoking createUser function to create new user
-	const authResponse = await createUser(email, password, name);
+    //Invoking createUser function to create new user
+    const authResponse = await createUser(email, password, name);
 
-	if (authResponse === 'name') return { res: 'name', message: 'Invalid Name Input' };
-	if (authResponse === 'email') return { res: 'email', message: 'Invalid Email Input' };
-	if (authResponse === 'emailExist') return { res: 'emailExist', message: 'Email already Exist. Please try to login.' };
-	if (authResponse === 'password') return { res: 'password', message: 'Invalid Password input' };
+    if (authResponse === "name")
+        return { res: "name", message: "Invalid Name Input" };
+    if (authResponse === "email")
+        return { res: "email", message: "Invalid Email Input" };
+    if (authResponse === "emailExist")
+        return {
+            res: "emailExist",
+            message: "Email already Exist. Please try to login.",
+        };
+    if (authResponse === "password" || password.length < 6)
+        return {
+            res: "password",
+            message: "Invalid password input. Try a different password",
+        };
 
-	if (authResponse && authResponse === 'added') {
-		toast.success('Signed up successfully');
-		return redirect('/');
-	}
+    if (authResponse && authResponse === "added") return "success";
+
+    toast.error("Something went wrong. Please try to use a strong password.");
+    return null;
 }

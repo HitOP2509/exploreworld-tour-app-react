@@ -54,6 +54,7 @@ const Profile = () => {
         if (actionData === "success") {
             setInputDisabled(true);
             toast.success("Profile updated successfully");
+            navigate("/");
         }
         if (actionData?.type === "password-error") {
             setShowError(true);
@@ -120,7 +121,6 @@ export async function action({ request }) {
             };
 
         if (!name) return "name";
-        if (!email) return "email";
         const newDetails = {
             displayName: name,
         };

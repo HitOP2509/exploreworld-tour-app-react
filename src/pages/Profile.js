@@ -1,71 +1,80 @@
-import { auth, db } from '../auth/firebase-config';
-import { updateProfile, updateEmail } from 'firebase/auth';
-import { useEffect, useState } from 'react';
-import { Form, redirect, useActionData, useNavigate, useNavigation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
-import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from "../auth/firebase-config";
+import { updateProfile, updateEmail } from "firebase/auth";
+import { useEffect, useState } from "react";
+import {
+    Form,
+    redirect,
+    useActionData,
+    useNavigate,
+    useNavigation,
+} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { doc, setDoc } from "firebase/firestore";
 
-import { FaLock } from 'react-icons/fa';
-import ProfileNav from '../components/ProfileNav';
-import { useAuthStatus } from '../hooks/useAuthStatus';
-import Spinner from '../components/Spinner';
+import { FaLock } from "react-icons/fa";
+import ProfileNav from "../components/ProfileNav";
+import { useAuthStatus } from "../hooks/useAuthStatus";
+import Spinner from "../components/Spinner";
 
 const Profile = () => {
-	const actionData = useActionData();
-	const navigation = useNavigation();
-	const navigate = useNavigate();
+    const actionData = useActionData();
+    const navigation = useNavigation();
+    const navigate = useNavigate();
 
-	const [isLoggedIn, isLoading] = useAuthStatus();
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [showError, setShowError] = useState(null);
+    const [isLoggedIn, isLoading] = useAuthStatus();
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [showError, setShowError] = useState(null);
 
-	const emailDisabled = auth?.currentUser?.providerData[0]?.providerId !== 'password';
+    const emailDisabled =
+        auth?.currentUser?.providerData[0]?.providerId !== "password";
 
-	const [inputDisabled, setInputDisabled] = useState(true);
-	const isSubmitting = navigation.state === 'submitting';
+    const [inputDisabled, setInputDisabled] = useState(true);
+    const isSubmitting = navigation.state === "submitting";
 
-	const editClick = () => setInputDisabled(false);
-	const cancelClick = () => setInputDisabled(true);
+    const editClick = () => setInputDisabled(false);
+    const cancelClick = () => setInputDisabled(true);
 
-	const existingName = useSelector((state) => state.userDetails.name);
-	const existingEmail = useSelector((state) => state.userDetails.email);
+    const existingName = auth?.currentUser?.displayName;
+    const existingEmail = auth?.currentUser?.email;
 
-	useEffect(() => {
-		if (!isLoading && !isLoggedIn) navigate('/sign-in');
-	}, [isLoading, isLoggedIn]);
+    useEffect(() => {
+        if (!isLoading && !isLoggedIn) navigate("/sign-in");
+    }, [isLoading, isLoggedIn]);
 
-	useEffect(() => {
-		setName(existingName);
-		setEmail(existingEmail);
-	}, [existingName, existingEmail]);
+    useEffect(() => {
+        if (isLoggedIn) {
+            setName(existingName);
+            setEmail(existingEmail);
+        }
+    }, [existingName, existingEmail, isLoggedIn]);
 
-	useEffect(() => {
-		if (actionData === 'success') {
-			setInputDisabled(true);
-			toast.success('Profile updated successfully');
-		}
-		if (actionData?.type === 'password-error') {
-			setShowError(true);
-		}
-	}, [actionData]);
+    useEffect(() => {
+        if (actionData === "success") {
+            setInputDisabled(true);
+            toast.success("Profile updated successfully");
+        }
+        if (actionData?.type === "password-error") {
+            setShowError(true);
+        }
+    }, [actionData]);
 
-	function inputChangeHandler(e) {
-		if (e.target.id === 'name') {
-			setName(e.target.value);
-			setShowError(false);
-		}
-		if (e.target.id === 'email') {
-			setEmail(e.target.value);
-			setShowError(false);
-		}
-	}
+    function inputChangeHandler(e) {
+        if (e.target.id === "name") {
+            setName(e.target.value);
+            setShowError(false);
+        }
+        if (e.target.id === "email") {
+            setEmail(e.target.value);
+            setShowError(false);
+        }
+    }
 
-	if (isLoading) return <Spinner />;
+    if (isLoading) return <Spinner />;
 
-	//prettier-ignore
-	return (
+    //prettier-ignore
+    return (
 		<>
 		<ProfileNav/>
 		<section className='max-w-[550px] w-[90%] mx-auto px-3 lg:pt-10 sm:pt-6'>
@@ -96,33 +105,45 @@ const Profile = () => {
 export default Profile;
 
 export async function action({ request }) {
-	try {
-		const data = await request.formData();
-		const name = data.get('name');
-		const email = data.get('email');
+    try {
+        const data = await request.formData();
+        const name = data.get("name");
+        const email = data.get("email");
 
-		if (auth.currentUser.providerData[0].providerId !== 'password' && email !== auth.currentUser.email)
-			return { type: 'password-error', provider: auth.currentUser.providerData[0].providerId };
+        if (
+            auth.currentUser.providerData[0].providerId !== "password" &&
+            email !== auth.currentUser.email
+        )
+            return {
+                type: "password-error",
+                provider: auth.currentUser.providerData[0].providerId,
+            };
 
-		if (!name) return 'name';
-		if (!email) return 'email';
-		const newDetails = {
-			displayName: name,
-		};
+        if (!name) return "name";
+        if (!email) return "email";
+        const newDetails = {
+            displayName: name,
+        };
 
-		if (auth.currentUser.displayName.trim() !== name.trim()) await updateProfile(auth.currentUser, newDetails);
-		if (auth.currentUser.providerData[0].providerId === 'password' && auth.currentUser.email.trim() !== email.trim())
-			await updateEmail(auth.currentUser, email);
+        if (auth.currentUser.displayName.trim() !== name.trim())
+            await updateProfile(auth.currentUser, newDetails);
+        if (
+            auth.currentUser.providerData[0].providerId === "password" &&
+            auth.currentUser.email.trim() !== email.trim()
+        )
+            await updateEmail(auth.currentUser, email);
 
-		const updatedData = {
-			name: auth.currentUser.displayName,
-			email: auth.currentUser.email,
-		};
+        const updatedData = {
+            name: auth.currentUser.displayName,
+            email: auth.currentUser.email,
+        };
 
-		setDoc(doc(db, 'users', auth.currentUser.uid), updatedData, { merge: true });
-		return 'success';
-	} catch (error) {
-		console.log(error.message);
-		return null;
-	}
+        setDoc(doc(db, "users", auth.currentUser.uid), updatedData, {
+            merge: true,
+        });
+        return "success";
+    } catch (error) {
+        console.log(error.message);
+        return null;
+    }
 }

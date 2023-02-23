@@ -3,12 +3,10 @@ import { updateProfile, updateEmail } from "firebase/auth";
 import { useEffect, useState } from "react";
 import {
     Form,
-    redirect,
     useActionData,
     useNavigate,
     useNavigation,
 } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -41,7 +39,7 @@ const Profile = () => {
 
     useEffect(() => {
         if (!isLoading && !isLoggedIn) navigate("/sign-in");
-    }, [isLoading, isLoggedIn]);
+    }, [isLoading, isLoggedIn, navigate]);
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -59,7 +57,7 @@ const Profile = () => {
         if (actionData?.type === "password-error") {
             setShowError(true);
         }
-    }, [actionData]);
+    }, [actionData, navigate]);
 
     function inputChangeHandler(e) {
         if (e.target.id === "name") {

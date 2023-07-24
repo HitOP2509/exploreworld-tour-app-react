@@ -5,7 +5,7 @@
 
 <h3 align="left">Tech used:</h3>
 <ul>
-   <li>React 18</li>
+   <li>React</li>
    <li>Tailwind CSS</li>
    <li>Redux Toolkit</li>
    <li>React router DOM</li>
